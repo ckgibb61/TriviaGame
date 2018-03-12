@@ -59,7 +59,7 @@ console.log("ready")
     function nextQuestion() {
         console.log("working")
         $(".questions").empty();
-        var title = $("<h1>").text(triviaQuestions[currentQ].question);
+        var title = $("<h3>").text(triviaQuestions[currentQ].question);
         $(".questions").append(title);
 
         for (var i = 0; i < triviaQuestions[currentQ].answerList.length; i++) {
@@ -72,9 +72,9 @@ console.log("ready")
         time();
         showTime();
 
-        // if (currentQ === triviaQuestions.length) {
-        //     $(".questions").append(score)
-        // };
+        if (currentQ === triviaQuestions.length) {
+                $(".questions").append("You got" + score + "correct")
+            };
     };
     
     $(".questions").on('click', "#choice", function(){
@@ -85,18 +85,17 @@ console.log("ready")
             currentQ++; 
             score++;
             nextQuestion();
-            // time();
-            // showTime();
+            clearInterval(time);
+            time();
+            showTime();
         } else { 
             currentQ++; 
             nextQuestion();
-            // time();
-            // showTime();
+            clearInterval(time);
+            time();
+            showTime();
 
         }
-        clearInterval(showTime);
-        time();
-        // showTime();
     });
 
 })
