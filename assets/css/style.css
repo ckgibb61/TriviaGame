@@ -1,0 +1,26 @@
+body {
+    background: url("../images/mada2.png") no-repeat right fixed;
+}
+
+#jumbo {
+    width: 60%;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+.btn-primary {
+    margin-left: 18px;
+}
+
+/* #pen {
+    height: 250px;
+} */
+.questions {
+    /* border-style: solid; */
+}
+
+#timer {
+
+}
+
+
