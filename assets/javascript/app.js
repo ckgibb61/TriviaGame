@@ -32,7 +32,7 @@ console.log("ready")
     var intervalId;
     var number = 10;
 
-    //these two functions keep track of time
+    // //these two functions keep track of time
     function time(){
         seconds = 10;
         $(".timer").html('<h3>Time Remaining: ' + seconds + '</h3>');
@@ -56,6 +56,8 @@ console.log("ready")
         nextQuestion();  
 
     })
+
+
     function nextQuestion() {
         console.log("working")
         $(".questions").empty();
@@ -79,21 +81,21 @@ console.log("ready")
     
     $(".questions").on('click', "#choice", function(){
         console.log("choice click", $(this)[0].attributes.answer.value);
+        clearInterval(time);
+       
 
         if ($(this)[0].attributes.answer.value === triviaQuestions[currentQ].answer) {
             alert("correct");
             currentQ++; 
             score++;
             nextQuestion();
-            clearInterval(time);
-            time();
-            showTime();
+            
+            
         } else { 
             currentQ++; 
             nextQuestion();
-            clearInterval(time);
-            time();
-            showTime();
+            // time();
+            // showTime();
 
         }
     });
