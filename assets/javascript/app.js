@@ -73,10 +73,6 @@ console.log("ready")
         };
         time();
         showTime();
-
-        if (currentQ === triviaQuestions.length) {
-                $(".questions").append("You got" + score + "correct")
-            };
     };
     
     $(".questions").on('click', "#choice", function(){
@@ -100,4 +96,11 @@ console.log("ready")
         }
     });
 
+    function end() {
+        if (currentQ == triviaQuestions.length) {
+            $(".questions").append("You got" + score + "correct");
+        };
+    };
+// }
 })
+
